@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EE946033285A564A005B3E13 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE946032285A564A005B3E13 /* main.cpp */; };
+		EE94603C285A5F40005B3E13 /* libncurses.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EE94603B285A5F40005B3E13 /* libncurses.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		EE94602F285A564A005B3E13 /* clib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = clib; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE946032285A564A005B3E13 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		EE946039285A5F1E005B3E13 /* clib.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = clib.entitlements; sourceTree = "<group>"; };
+		EE94603B285A5F40005B3E13 /* libncurses.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libncurses.tbd; path = usr/lib/libncurses.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE94603C285A5F40005B3E13 /* libncurses.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +47,7 @@
 			children = (
 				EE946031285A564A005B3E13 /* clib */,
 				EE946030285A564A005B3E13 /* Products */,
+				EE94603A285A5F40005B3E13 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,9 +62,18 @@
 		EE946031285A564A005B3E13 /* clib */ = {
 			isa = PBXGroup;
 			children = (
+				EE946039285A5F1E005B3E13 /* clib.entitlements */,
 				EE946032285A564A005B3E13 /* main.cpp */,
 			);
 			path = clib;
+			sourceTree = "<group>";
+		};
+		EE94603A285A5F40005B3E13 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EE94603B285A5F40005B3E13 /* libncurses.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,7 +252,9 @@
 		EE946037285A564A005B3E13 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = clib/clib.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				ENABLE_HARDENED_RUNTIME = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -246,7 +262,9 @@
 		EE946038285A564A005B3E13 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = clib/clib.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				ENABLE_HARDENED_RUNTIME = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
